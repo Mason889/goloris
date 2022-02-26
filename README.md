@@ -53,9 +53,16 @@ Goloris - slowloris[1] for nginx DoS
 * **How to use it?**
 
   ```
-  go get -u -a github.com/valyala/goloris
-  go build github.com/valyala/goloris
+  go mod download
+  go build -o goloris 
   ./goloris -help
+  ```
+  
+* **How to use it with docker?**
+
+  ```
+  docker build -t goloris:latest -f Dockerfile .
+  docker run --rm --name goloris goloris:latest -h
   ```
 
 P.S. Don't forget adjusting `ulimit -n` before experimenting.
